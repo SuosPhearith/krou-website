@@ -1,0 +1,17 @@
+*{
+    font-family: "Kantumruy Pro", sans-serif;
+    margin: 0;
+}
+.bg-book{
+    background-image: url(../image/bg_1.jp);
+}
+#bg-logn {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../image/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

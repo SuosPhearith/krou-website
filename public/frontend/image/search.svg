@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="541" viewBox="0 0 1920 541">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.967" x2="1" y2="0.042" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#005c97"/>
+      <stop offset="1" stop-color="#363795"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="gray" stop-opacity="0.251"/>
+      <stop offset="0.54" stop-color="gray" stop-opacity="0.122"/>
+      <stop offset="1" stop-color="gray" stop-opacity="0.102"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2630" data-name="Group 2630" transform="translate(8568 18099)">
+    <g id="Group_2627" data-name="Group 2627" transform="translate(-332 49)">
+      <rect id="Online-or-Classroom" width="1920" height="541" transform="translate(-8236 -18148)" fill="url(#linear-gradient)"/>
+      <g id="Group_2541" data-name="Group 2541">
+        <g id="Group_2541-2" data-name="Group 2541" transform="translate(-8321 -18155)">
+          <circle id="Ellipse_262" data-name="Ellipse 262" cx="40" cy="40" r="40" transform="translate(106 105)" fill="rgba(255,255,255,0.1)"/>
+          <circle id="Ellipse_263" data-name="Ellipse 263" cx="40" cy="40" r="40" transform="translate(147 60)" fill="rgba(255,255,255,0.1)"/>
+        </g>
+        <g id="Group_2547" data-name="Group 2547" transform="translate(-6607 -17901)">
+          <circle id="Ellipse_262-2" data-name="Ellipse 262" cx="40" cy="40" r="40" transform="translate(167 100)" fill="rgba(255,255,255,0.1)"/>
+          <circle id="Ellipse_263-2" data-name="Ellipse 263" cx="40" cy="40" r="40" transform="translate(147 60)" fill="rgba(255,255,255,0.1)"/>
+        </g>
+        <circle id="Ellipse_269" data-name="Ellipse 269" cx="34" cy="34" r="34" transform="translate(-7596 -18148)" fill="rgba(255,255,255,0.1)"/>
+      </g>
+    </g>
+  </g>
+</svg>
