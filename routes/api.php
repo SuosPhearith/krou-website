@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\api\BookController;
 use App\Http\Controllers\api\BookDocumentController;
+use App\Http\Controllers\api\DocumentController;
+use App\Http\Controllers\api\LecturerController;
+use App\Http\Controllers\api\VideoController;
 use App\Http\Controllers\api\WorksheetController;
 use App\Http\Controllers\api\WorksheetDocumentController;
 use Illuminate\Http\Request;
@@ -56,4 +59,33 @@ Route::prefix('book-documents')->group(function () {
     Route::put('/update/{id}', [BookDocumentController::class, 'updateBookDocument']);
     Route::delete('/delete/{id}', [BookDocumentController::class, 'deleteBookDocument']);
     Route::patch('/toggle-status/{id}', [BookDocumentController::class, 'toggleStatusBookDocument']);
+});
+
+Route::prefix('documents')->group(function () {
+    Route::post('/create', [DocumentController::class, 'createDocument']);
+    Route::get('/', [DocumentController::class, 'getDocuments']);
+    Route::get('/{id}', [DocumentController::class, 'getDocument']);
+    Route::put('/update/{id}', [DocumentController::class, 'updateDocument']);
+    Route::delete('/delete/{id}', [DocumentController::class, 'deleteDocument']);
+    Route::patch('/toggle-status/{id}', [DocumentController::class, 'toggleStatusDocument']);
+});
+
+Route::prefix('lecturers')->group(function () {
+    Route::post('/create', [LecturerController::class, 'createLecturer']);
+    Route::get('/', [LecturerController::class, 'getLecturers']);
+    Route::get('/{id}', [LecturerController::class, 'getLecturer']);
+    Route::put('/update/{id}', [LecturerController::class, 'updateLecturer']);
+    Route::delete('/delete/{id}', [LecturerController::class, 'deleteLecturer']);
+    Route::patch('/toggle-status/{id}', [LecturerController::class, 'toggleStatusLecturer']);
+});
+
+Route::prefix('videos')->group(function () {
+    Route::post('/create', [VideoController::class, 'createVideo']);
+    Route::get('/', [VideoController::class, 'getVideos']);
+    Route::get('/{id}', [VideoController::class, 'getVideo']);
+    Route::put('/update/{id}', [VideoController::class, 'updateVideo']);
+    Route::delete('/delete/{id}', [VideoController::class, 'deleteVideo']);
+    Route::get('/lecturer/{lecturers_id}', [VideoController::class, 'getVideosByLecturer']);
+    Route::patch('/toggle-status/{id}', [VideoController::class, 'toggleStatus']);
+
 });

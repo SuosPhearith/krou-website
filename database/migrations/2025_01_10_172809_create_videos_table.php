@@ -15,14 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('title', 150)->nullable(false); // Required, max length 150
             $table->string('video_uri', 150)->nullable(false); // Required, max length 150
+            $table->boolean('status')->default(true);
             $table->unsignedBigInteger('lecturers_id'); // Foreign key to lecturers table
-            $table->unsignedBigInteger('documents_id'); // Foreign key to documents table
             $table->timestamps();
             $table->softDeletes(); // Soft delete column
 
             // Foreign key constraints
             $table->foreign('lecturers_id')->references('id')->on('lecturers')->onDelete('cascade');
-            $table->foreign('documents_id')->references('id')->on('documents')->onDelete('cascade');
         });
     }
 
