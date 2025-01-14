@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title', 100)->nullable(false); // Required, max length 100
             $table->string('file_uri')->nullable(false); // Required
             $table->unsignedBigInteger('worksheets_id'); // Foreign key to worksheets table
-            $table->boolean('status')->default(true); // Status field with default value as true
+            $table->boolean('status')->default(false); // Status field with default value as false
             $table->timestamps();
             $table->softDeletes(); // Soft delete column
 

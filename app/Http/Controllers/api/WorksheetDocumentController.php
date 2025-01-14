@@ -15,7 +15,6 @@ class WorksheetDocumentController extends Controller
             'title' => 'required|string|max:100',
             'file_uri' => 'required|string',
             'worksheets_id' => 'required|exists:worksheets,id',
-            'status' => 'boolean',
         ]);
 
         $worksheetDocument = WorksheetDocument::create($validatedData);

@@ -15,7 +15,6 @@ class BookDocumentController extends Controller
             'title' => 'required|string|max:100',
             'file_uri' => 'required|string',
             'books_id' => 'required|exists:books,id',
-            'status' => 'boolean',
         ]);
 
         $bookDocument = BookDucument::create($validatedData);

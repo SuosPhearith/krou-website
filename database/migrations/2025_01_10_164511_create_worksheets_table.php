@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('coming_from', 100)->nullable(false); 
             $table->string('lecturer', 50)->nullable(false);
             $table->string('file_uri', 100)->nullable(false); 
-            $table->boolean('status')->default(true); 
+            $table->boolean('status')->default(false); 
             $table->timestamps();
             $table->softDeletes();
         });

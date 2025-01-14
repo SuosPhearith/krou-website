@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 100)->nullable(false); // Required, max length 100
             $table->string('cover_uri', 100)->nullable(false); // Required, max length 100
-            $table->boolean('status')->default(true); // Status field with default value true
+            $table->boolean('status')->default(false); // Status field with default value false
             $table->timestamps();
             $table->softDeletes(); // Soft delete column
         });

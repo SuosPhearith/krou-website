@@ -2,14 +2,37 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+use App\Models\Document;
+use App\Models\Worksheet;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        // Get the newest 4 documents with status = true
+        $documents = Document::where('status', true)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+
+        // Get the newest 4 worksheets with status = true
+        $worksheets = Worksheet::where('status', true)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+
+        // Get the newest 4 books with status = true
+        $books = Book::where('status', true)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
+            ->get();
+
+        // Pass all collections to the view
+        return view('frontend.home', compact('documents', 'worksheets', 'books'));
     }
+
     public function worksheet()
     {
         return view('frontend.worksheet');

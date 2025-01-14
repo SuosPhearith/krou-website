@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100)->nullable(false); // Required, max length 100
             $table->string('coming_from', 150)->nullable(false); // Required, max length 150
-            $table->boolean('status')->default(true); // Status field with default value true
+            $table->boolean('status')->default(false); // Status field with default value false
             $table->unsignedBigInteger('documents_id'); // Foreign key to documents table
             $table->timestamps();
             $table->softDeletes(); // Soft delete column

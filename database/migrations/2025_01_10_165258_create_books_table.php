@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('coming_from', 100)->nullable(); // Optional
             $table->string('lecturer', 50)->nullable(false); // Required, max length 50
             $table->string('file_uri', 100)->nullable(false); // Required, max length 100
-            $table->boolean('status')->default(true); // Status field with default value as true
+            $table->boolean('status')->default(false); // Status field with default value as false
             $table->timestamps();
             $table->softDeletes(); // Soft delete column
         });

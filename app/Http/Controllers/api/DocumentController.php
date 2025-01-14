@@ -14,7 +14,6 @@ class DocumentController extends Controller
         $validatedData = $request->validate([
             'title' => 'required|string|max:100',
             'cover_uri' => 'required|string|max:100',
-            'status' => 'boolean',
         ]);
 
         $document = Document::create($validatedData);

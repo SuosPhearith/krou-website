@@ -69,6 +69,8 @@ return [
     |
     */
 
+    'file_base_url' => env('FILE_BASE_URL'),
+
     'timezone' => 'UTC',
 
     /*

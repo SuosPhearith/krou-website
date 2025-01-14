@@ -19,7 +19,6 @@ class BookController extends Controller
             'coming_from' => 'required|string|max:100',
             'lecturer' => 'required|string|max:50',
             'file_uri' => 'required|string|max:100',
-            'status' => 'nullable|boolean',
         ]);
 
         $book = Book::create($validatedData);
@@ -81,7 +80,6 @@ class BookController extends Controller
             'coming_from' => 'required|string|max:100',
             'lecturer' => 'required|string|max:50',
             'file_uri' => 'nullable|string|max:100',
-            'status' => 'required|boolean',
         ]);
 
         // Remove 'cover_uri' and 'file_uri' from validated data if they are null or empty

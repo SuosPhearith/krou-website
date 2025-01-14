@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title', 150)->nullable(false); // Required, max length 150
             $table->string('video_uri', 150)->nullable(false); // Required, max length 150
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(false);
             $table->unsignedBigInteger('lecturers_id'); // Foreign key to lecturers table
             $table->timestamps();
             $table->softDeletes(); // Soft delete column

@@ -14,7 +14,6 @@ class LecturerController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|string|max:100',
             'coming_from' => 'required|string|max:150',
-            'status' => 'boolean',
             'documents_id' => 'required|exists:documents,id',
         ]);
 
