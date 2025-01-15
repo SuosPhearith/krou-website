@@ -12,22 +12,22 @@ class DocumentSeeder extends Seeder
         $documents = [
             [
                 'title' => 'យុទ្ធវិធីបង្រៀន',
-                'cover_uri' => '12345_1736874358185_icon2.png',
+                'cover_uri' => 'uploads/12345_1736874358185_icon2.png',
                 'status' => true,
             ],
             [
                 'title' => 'វិធីសាស្រ្តបង្រៀន',
-                'cover_uri' => '12345_1736874358185_icon2.png',
+                'cover_uri' => 'uploads/12345_1736874358185_icon2.png',
                 'status' => true,
             ],
             [
                 'title' => 'ឯកសារបណ្តុះបណ្តាលគ្រូ មធ្យម',
-                'cover_uri' => '12345_1736874358185_icon2.png',
+                'cover_uri' => 'uploads/12345_1736874358185_icon2.png',
                 'status' => true,
             ],
             [
                 'title' => 'ឯកសារបណ្តុះបណ្តាលគ្រូ បឋម',
-                'cover_uri' => '12345_1736874358185_icon2.png',
+                'cover_uri' => 'uploads/12345_1736874358185_icon2.png',
                 'status' => true,
             ],
         ];
