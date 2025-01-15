@@ -65,32 +65,17 @@
                         <!-- Dropdown menu -->
                         <ul id="service-dropdown"
                             class="absolute hidden group-hover:block bg-white border border-gray-200 shadow-lg rounded-sm w-48 z-10 py-3">
-                            <li>
-                                <a href="/video"
-                                    class="block px-3 py-1 {{ Request::is('video') ? 'bg-blue-500 text-white-500' : 'hover:bg-[#006cb7] hover:text-[#ffce27]' }}">
-                                    យុទ្ធវិធីបង្រៀន
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/video"
-                                    class="block px-3 py-1 {{ Request::is('video') ? 'bg-blue-500 text-white-500' : 'hover:bg-[#006cb7] hover:text-[#ffce27]' }}">
-                                    វិធីសាស្រ្តបង្រៀន
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/video"
-                                    class="block px-3 py-1 {{ Request::is('video') ? 'bg-blue-500 text-white-500' : 'hover:bg-[#006cb7] hover:text-[#ffce27]' }}">
-                                    ឯកសារបណ្តុះបណ្តាលគ្រូ មធ្យម
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/video"
-                                    class="block px-3 py-1 {{ Request::is('video') ? 'bg-blue-500 text-white-500' : 'hover:bg-[#006cb7] hover:text-[#ffce27]' }}">
-                                    ឯកសារបណ្តុះបណ្តាលគ្រូ បឋម
-                                </a>
-                            </li>
+                            @foreach ($videoDocuments as $document)
+                                <li>
+                                    <a href="{{ route('video', $document->id) }}"
+                                        class="block px-3 py-1 {{ Request::is('video/' . $document->id) ? 'bg-blue-500 text-white' : 'hover:bg-[#006cb7] hover:text-[#ffce27]' }}">
+                                        {{ $document->title }}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </li>
+
 
                 </ul>
             </div>

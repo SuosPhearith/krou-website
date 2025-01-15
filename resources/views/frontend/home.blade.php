@@ -39,7 +39,7 @@
                             class="bg-white p-6 rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-lg hover:border-b-4 hover:border-[#006cb7] h-full">
 
                             <!-- Document Image -->
-                            <a href="/video" class="flex items-center justify-center mb-4">
+                            <a href="/video/{{$document->id}}" class="flex items-center justify-center mb-4">
                                 <img src="{{ config('app.file_base_url') . $document->cover_uri }}"
                                     alt="{{ $document->title }}"
                                     class="w-20 h-20 rounded-none transition-transform duration-500 ease-in-out transform hover:scale-105">
@@ -53,7 +53,7 @@
 
                             <!-- Action Button -->
                             <div class="flex justify-center mt-2">
-                                <a href="/video"
+                                <a href="/video/{{$document->id}}"
                                     class="flex items-center border-dashed border-2 border-[#006cb7] rounded-full p-3">
                                     <i class="fa-solid fa-arrow-right text-[15px] text-[#006cb7]"></i>
                                 </a>
@@ -166,7 +166,7 @@
                                             class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
                                         ទាញយក
                                     </a>
-                                    <a href="book/detail"
+                                    <a href="/worksheet/detail/{{$worksheet->id}}"
                                         class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
                                         <i
                                             class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>

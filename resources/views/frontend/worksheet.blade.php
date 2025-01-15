@@ -43,7 +43,7 @@
                                             class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
                                         ទាញយក
                                     </a>
-                                    <a href="worksheet/detail/{{$worksheet->id}}"
+                                    <a href="/worksheet/detail/{{$worksheet->id}}"
                                         class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
                                         <i
                                             class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>

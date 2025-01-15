@@ -15,4 +15,9 @@ class Document extends Model
         'cover_uri',
         'status',
     ];
+
+    public function lecturers()
+    {
+        return $this->hasMany(Lecturer::class, 'documents_id');
+    }
 }

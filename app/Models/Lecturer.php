@@ -16,4 +16,9 @@ class Lecturer extends Model
         'status',
         'documents_id',
     ];
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class, 'lecturers_id');
+    }
 }

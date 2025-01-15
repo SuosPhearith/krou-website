@@ -1,0 +1,51 @@
+## For API and Website we use Laravel
+
+>> git clone https://github.com/SuosPhearith/krou-website.git
+=> Copy .env.example => .env
+=> Create database follow .env
+>> cd krou-website
+>> composer install
+>> php artisan migrate:fresh
+>> php artisan db:seed
+>> php artisan serve
+
+
+
+
+
+## For FILE service
+
+>> git clone https://github.com/SuosPhearith/krou-file.git
+=> Copy .env.example => .env
+>> cd krou-file
+>> npm install
+>> node server.js
+
+
+
+
+## For Admin
+
+>> git close https://github.com/SuosPhearith/krou-admin.git
+=> Copy .env.example => .env
+>> cd krou-file
+>> npm install
+>> npm run dev
+
+
+
+
+
+## user:
+
+email: admin@gmail.com
+pass: Admin@#123
+
+
+
+
+
+
+
+
+
