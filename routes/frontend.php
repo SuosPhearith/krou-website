@@ -8,7 +8,7 @@ Route::get('/', action: [FrontendController::class, 'home'])->name('home');
 
 //================= >> Worksheet
 Route::get('/worksheet', action: [FrontendController::class, 'worksheet'])->name('worksheet');
-Route::get('/worksheet/detail', action: [FrontendController::class, 'worksheetDetail'])->name('worksheet-detail');
+Route::get('/worksheet/detail/{id}', [FrontendController::class, 'worksheetDetail'])->name('worksheet-detail');
 
 //================= >> Video
 Route::get('/video', action: [FrontendController::class, 'video'])->name('video');

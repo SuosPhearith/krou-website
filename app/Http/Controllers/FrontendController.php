@@ -35,12 +35,25 @@ class FrontendController extends Controller
 
     public function worksheet()
     {
-        return view('frontend.worksheet');
+        // Get worksheets with pagination of 12, sorted by ID in descending order
+        $worksheets = Worksheet::where('status', true)
+            ->orderBy('id', 'desc')
+            ->paginate(16);
+
+        // Pass the paginated worksheets to the view
+        return view('frontend.worksheet', compact('worksheets'));
     }
-    public function worksheetDetail()
+
+
+    public function worksheetDetail($id)
     {
-        return view('frontend.worksheetDetail');
+        // Find the worksheet by ID, or throw a 404 if not found
+        $worksheet = Worksheet::findOrFail($id);
+
+        // Pass the worksheet to the view
+        return view('frontend.worksheetDetail', compact('worksheet'));
     }
+
     public function video()
     {
         return view('frontend.video');

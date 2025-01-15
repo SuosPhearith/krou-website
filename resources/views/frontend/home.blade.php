@@ -61,12 +61,8 @@
                         </div>
                     @endforeach
                 @endif
-
-
             </div>
-
         </section>
-
     </div>
 
     <!-- =================== Start ============= -->
@@ -88,39 +84,43 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-                @foreach ($worksheets as $worksheet)
-                    <div data-aos="zoom-in" data-aos-duration="1500"
-                        class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
-                        <div class="p-4">
-                            <img src="{{ config('app.file_base_url') . $worksheet->cover_uri }}" alt="Document Cover"
-                                class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
-                            <div class="mt-4">
-                                <a href="book/detail"
-                                    class="group px-3 py-1.5 text-[15px] text-[#4d4d4d] rounded-tl-xl rounded-tr-xl rounded-br-xl flex items-center">
-                                    <i class="fa-regular fa-clock text-[12px] text-[#006cb7] mr-1"></i> {{$worksheet->published_date}}
-                                </a>
-                                <h2 class="text-[18px] font-medium mt-2">
-                                    {{$worksheet->title}}
-                                </h2>
-                            </div>
-                            <div class="flex items-center justify-between mt-3 space-x-3">
-                                <a href="{{ asset('frontend/image/sheet/2018.pdf') }}" target="_blank"
-                                    class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
-                                    <i
-                                        class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
-                                    ទាញយក
-                                </a>
-                                <a href="book/detail"
-                                    class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
-                                    <i class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
-                                    មើលជាមុន
-                                </a>
+                @if ($books->isEmpty())
+                    <p>No documents available.</p>
+                @else
+                    @foreach ($books as $book)
+                        <div data-aos="zoom-in" data-aos-duration="1500"
+                            class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
+                            <div class="p-4">
+                                <img src="{{ config('app.file_base_url') . $book->cover_uri }}" alt="Document Cover"
+                                    class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
+                                <div class="mt-4">
+                                    <a href="book/detail"
+                                        class="group px-3 py-1.5 text-[15px] text-[#4d4d4d] rounded-tl-xl rounded-tr-xl rounded-br-xl flex items-center">
+                                        <i class="fa-regular fa-clock text-[12px] text-[#006cb7] mr-1"></i>
+                                        {{ $book->published_date }}
+                                    </a>
+                                    <h2 class="text-[18px] font-medium mt-2">
+                                        {{ $book->title }}
+                                    </h2>
+                                </div>
+                                <div class="flex items-center justify-between mt-3 space-x-3">
+                                    <a href="{{ config('app.file_base_url') . $book->file_uri }}" target="_blank"
+                                        class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
+                                        <i
+                                            class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
+                                        ទាញយក
+                                    </a>
+                                    <a href="book/detail"
+                                        class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
+                                        <i
+                                            class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
+                                        មើលជាមុន
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
-
-
+                    @endforeach
+                @endif
             </div>
         </section>
     </div>
@@ -137,122 +137,49 @@
                     </p>
                 </div>
                 <div class="flex items-center">
-                    <a href="" class="text-[12px] text-start text-[#006cb7] lg:text-[18px] flex items-center">
+                    <a href="worksheet" class="text-[12px] text-start text-[#006cb7] lg:text-[18px] flex items-center">
                         ទាំងអស់
                         <i class="bx bx-chevron-right ml-1 text-[20px] text-[#006cb7]"></i>
                     </a>
                 </div>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
-                <div data-aos="zoom-in" data-aos-duration="1500"
-                    class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
-                    <div class="p-4">
-                        <img src="{{ asset('frontend/image/sheet/1.jpg') }}" alt="Document Cover"
-                            class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
-                        <div class="mt-4">
-                            <h2 class="text-[18px] font-medium mt-2">
-                                វិញ្ញាសារពលរដ្ឋវិជា្ជទី១
-                            </h2>
+                @if ($worksheets->isEmpty())
+                    <p>No documents available.</p>
+                @else
+                    @foreach ($worksheets as $worksheet)
+                        <div data-aos="zoom-in" data-aos-duration="1500"
+                            class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
+                            <div class="p-4">
+                                <img src="{{ config('app.file_base_url') . $worksheet->cover_uri }}" alt="Document Cover"
+                                    class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
+                                <div class="mt-4">
+                                    <h2 class="text-[18px] font-medium mt-2">
+                                        {{ $worksheet->title }}
+                                    </h2>
+                                </div>
+                                <div class="flex items-center justify-between mt-3 space-x-3">
+                                    
+                                    <a href="{{ config('app.file_base_url') . $worksheet->file_uri }}" target="_blank"
+                                        class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
+                                        <i
+                                            class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
+                                        ទាញយក
+                                    </a>
+                                    <a href="book/detail"
+                                        class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
+                                        <i
+                                            class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
+                                        មើលជាមុន
+                                    </a>
+                                </div>
+
+
+                            </div>
                         </div>
-                        <div class="flex items-center justify-between mt-3 space-x-3">
-                            <a href="{{ asset('frontend/image/sheet/2018.pdf') }}" target="_blank"
-                                class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
-                                <i class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
-                                ទាញយក
-                            </a>
-                            <a href="book/detail"
-                                class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
-                                <i class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
-                                មើលជាមុន
-                            </a>
-                        </div>
+                    @endforeach
+                @endif
 
-
-                    </div>
-                </div>
-
-                <div data-aos="zoom-in" data-aos-duration="1500"
-                    class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
-                    <div class="p-4">
-                        <img src="{{ asset('frontend/image/sheet/2.jpg') }}" alt="Document Cover"
-                            class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
-                        <div class="mt-4">
-                            <h2 class="text-[18px] font-medium mt-2">
-                                វិញ្ញាសារប្រវត្តិវិទ្យាទី២
-                            </h2>
-                        </div>
-                        <div class="flex items-center justify-between mt-3 space-x-3">
-                            <a href="{{ asset('frontend/image/sheet/2018.pdf') }}" target="_blank"
-                                class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
-                                <i class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
-                                ទាញយក
-                            </a>
-                            <a href="book/detail"
-                                class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
-                                <i class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
-                                មើលជាមុន
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div data-aos="zoom-in" data-aos-duration="1500"
-                    class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
-                    <div class="p-4">
-                        <img src="{{ asset('frontend/image/sheet/3.jpg') }}" alt="Document Cover"
-                            class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
-                        <div class="mt-4">
-                            <h2 class="text-[18px] font-medium mt-2">
-                                វិញ្ញាសារភាសារខ្មែរ
-                            </h2>
-                        </div>
-                        <div class="flex items-center justify-between mt-3 space-x-3">
-                            <a href="{{ asset('frontend/image/sheet/2018.pdf') }}" target="_blank"
-                                class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
-                                <i class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
-                                ទាញយក
-                            </a>
-                            <a href="book/detail"
-                                class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
-                                <i class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
-                                មើលជាមុន
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <div data-aos="zoom-in" data-aos-duration="1500"
-                    class="bg-white rounded-tl-3xl rounded-tr-3xl rounded-br-3xl shadow-md overflow-hidden">
-                    <div class="p-4">
-                        <img src="{{ asset('frontend/image/sheet/4.jpg') }}" alt="Document Cover"
-                            class="w-full h-auto object-cover rounded-t-lg transition-transform duration-500 ease-in-out transform hover:scale-105" />
-                        <div class="mt-4">
-
-                            <h2 class="text-[18px] font-medium mt-2">
-                                វិញ្ញាសាភូមិវិទ្យាទី៣
-                            </h2>
-                        </div>
-                        <div class="flex items-center justify-between mt-3 space-x-3">
-                            <a href="{{ asset('frontend/image/sheet/2018.pdf') }}" target="_blank"
-                                class="group px-3 py-1.5 text-[15px] text-[#fff] rounded-tl-xl rounded-tr-xl rounded-br-xl border border-[#006cb7] hover:text-[#fff] bg-[#006cb7] hover:bg-[#006bb7cc] flex items-center">
-                                <i class="fa-solid fa-download text-[12px] text-[#fff] mr-1 group-hover:text-[#fff]"></i>
-                                ទាញយក
-                            </a>
-                            <a href="book/detail"
-                                class="group px-3 py-1.5 text-[15px] text-[#006cb7] rounded-tl-xl rounded-tr-xl rounded-br-xl bg-transparent border border-[#006cb7] hover:text-[#fff] hover:bg-[#006cb7] flex items-center">
-                                <i class="fa-solid fa-eye text-[12px] text-[#006cb7] mr-1 group-hover:text-[#fff]"></i>
-                                មើលជាមុន
-                            </a>
-                        </div>
-
-
-                    </div>
-                </div>
             </div>
         </section>
     </div>
