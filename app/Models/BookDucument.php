@@ -15,5 +15,10 @@ class BookDucument extends Model
         'file_uri',
         'books_id',
         'status',
+        'cover_uri',
+        'coming_from',
+        'lecturer',
+        'description',
+        'published_date'
     ];
 }

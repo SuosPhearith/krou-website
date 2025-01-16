@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 100)->nullable(false); // Required, max length 100
-            $table->text('description')->nullable(); // Optional
-            $table->string('cover_uri', 100)->nullable(false); // Required, max length 100
-            $table->dateTime('published_date')->nullable(); // Optional
-            $table->string('coming_from', 100)->nullable(); // Optional
-            $table->string('lecturer', 50)->nullable(false); // Required, max length 50
-            $table->string('file_uri', 100)->nullable(false); // Required, max length 100
-            $table->boolean('status')->default(false); // Status field with default value as false
+            $table->string('title', 100)->nullable(false); 
+            $table->text('description')->nullable(); 
+            $table->string('cover_uri', 100)->nullable(false); 
+            $table->dateTime('published_date')->nullable(false); 
+            $table->string('coming_from', 100)->nullable(true); 
+            $table->string('lecturer', 50)->nullable(true); 
+            $table->string('file_uri', 100)->nullable(true); 
+            $table->boolean('status')->default(false); 
             $table->timestamps();
-            $table->softDeletes(); // Soft delete column
+            $table->softDeletes(); 
         });
     }
 

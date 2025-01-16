@@ -17,6 +17,11 @@ return new class extends Migration
             $table->string('file_uri')->nullable(false); // Required
             $table->unsignedBigInteger('worksheets_id'); // Foreign key to worksheets table
             $table->boolean('status')->default(false); // Status field with default value as false
+            $table->string('coming_from', 100)->nullable(false); 
+            $table->string('lecturer', 50)->nullable(false);
+            $table->string('cover_uri', 100)->nullable(false);
+            $table->text('description')->nullable();
+            $table->dateTime('published_date')->nullable(false); 
             $table->timestamps();
             $table->softDeletes(); // Soft delete column
 
