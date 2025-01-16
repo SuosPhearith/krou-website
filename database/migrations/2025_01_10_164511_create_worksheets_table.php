@@ -17,9 +17,9 @@ return new class extends Migration
             $table->text('description')->nullable(); 
             $table->string('cover_uri', 100)->nullable(false); 
             $table->dateTime('published_date')->nullable(false); 
-            $table->string('coming_from', 100)->nullable(false); 
-            $table->string('lecturer', 50)->nullable(false);
-            $table->string('file_uri', 100)->nullable(false); 
+            $table->string('coming_from', 100)->nullable(true); 
+            $table->string('lecturer', 50)->nullable(true);
+            $table->string('file_uri', 100)->nullable(true); 
             $table->boolean('status')->default(false); 
             $table->timestamps();
             $table->softDeletes();

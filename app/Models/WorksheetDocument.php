@@ -15,5 +15,10 @@ class WorksheetDocument extends Model
         'file_uri',
         'worksheets_id',
         'status',
+        'cover_uri',
+        'coming_from',
+        'lecturer',
+        'description',
+        'published_date'
     ];
 }

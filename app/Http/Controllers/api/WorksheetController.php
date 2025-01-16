@@ -16,9 +16,6 @@ class WorksheetController extends Controller
             'description' => 'nullable|string',
             'cover_uri' => 'required|string|max:100',
             'published_date' => 'required|date',
-            'coming_from' => 'required|string|max:100',
-            'lecturer' => 'required|string|max:50',
-            'file_uri' => 'required|string|max:100',
         ]);
 
         $worksheet = Worksheet::create($validatedData);
@@ -77,18 +74,11 @@ class WorksheetController extends Controller
             'description' => 'nullable|string',
             'cover_uri' => 'nullable|string|max:100',
             'published_date' => 'required|date',
-            'coming_from' => 'required|string|max:100',
-            'lecturer' => 'required|string|max:50',
-            'file_uri' => 'nullable|string|max:100',
         ]);
 
         // Remove 'cover_uri' and 'file_uri' from validated data if they are null or empty
         if (empty($validatedData['cover_uri'])) {
             unset($validatedData['cover_uri']);
-        }
-
-        if (empty($validatedData['file_uri'])) {
-            unset($validatedData['file_uri']);
         }
 
         // Update the worksheet

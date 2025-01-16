@@ -13,8 +13,8 @@ class Book extends Model
     protected $fillable = [
         'title',
         'description',
-        'cover_uri',
         'published_date',
+        'cover_uri',
         'coming_from',
         'lecturer',
         'file_uri',

@@ -15,6 +15,11 @@ class BookDocumentController extends Controller
             'title' => 'required|string|max:100',
             'file_uri' => 'required|string',
             'books_id' => 'required|exists:books,id',
+            'coming_from' => 'required|string|max:100',
+            'lecturer' => 'required|string|max:50',
+            'cover_uri' => 'required|string|max:100',
+            'description' => 'nullable|string',
+            'published_date' => 'required|date',
         ]);
 
         $bookDocument = BookDucument::create($validatedData);
@@ -70,10 +75,21 @@ class BookDocumentController extends Controller
 
         $validatedData = $request->validate([
             'title' => 'required|string|max:100',
-            'file_uri' => 'required|string',
-            'books_id' => 'required|exists:books,id',
             'status' => 'boolean',
+            'coming_from' => 'required|string|max:100',
+            'lecturer' => 'required|string|max:50',
+            'file_uri' => 'nullable|string|max:100',
+            'cover_uri' => 'nullable|string|max:100',
+            'description' => 'nullable|string',
+            'published_date' => 'required|date',
         ]);
+
+        if (empty($validatedData['file_uri'])) {
+            unset($validatedData['file_uri']);
+        }
+        if (empty($validatedData['cover_uri'])) {
+            unset($validatedData['cover_uri']);
+        }
 
         $bookDocument->update($validatedData);
 
