@@ -6,6 +6,7 @@ use App\Http\Controllers\api\DashboardController;
 use App\Http\Controllers\api\DocumentController;
 use App\Http\Controllers\api\LecturerController;
 use App\Http\Controllers\api\VideoController;
+use App\Http\Controllers\api\VideoDocController;
 use App\Http\Controllers\api\WorksheetController;
 use App\Http\Controllers\api\WorksheetDocumentController;
 use App\Http\Controllers\AuthController;
@@ -89,6 +90,15 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::delete('/delete/{id}', [VideoController::class, 'deleteVideo']);
         Route::get('/lecturer/{lecturers_id}', [VideoController::class, 'getVideosByLecturer']);
         Route::patch('/toggle-status/{id}', [VideoController::class, 'toggleStatus']);
+    });
+
+    Route::prefix('video-docs')->group(function () {
+        Route::get('/', [VideoDocController::class, 'index']); 
+        Route::post('/', [VideoDocController::class, 'store']);
+        Route::get('/{id}', [VideoDocController::class, 'show']);
+        Route::put('/{id}', [VideoDocController::class, 'update']);
+        Route::delete('/{id}', [VideoDocController::class, 'destroy']);
+        Route::patch('/{id}/toggle-status', [VideoDocController::class, 'toggleStatus']);
     });
 });
 

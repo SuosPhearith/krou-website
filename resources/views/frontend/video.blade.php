@@ -77,10 +77,21 @@
                 </button>
             </div>
             <div class="p-4">
+                <!-- Video -->
                 <video id="videoPlayer" class="w-full" controls>
                     <source id="videoSource" src="{{ asset('frontend/image/video/1.mp4') }}" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+
+                <!-- Push and Pull Buttons -->
+                <div class="flex justify-between items-center mt-4">
+                    <button onclick="rewindVideo()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                        -5s
+                    </button>
+                    <button onclick="forwardVideo()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                        +5s
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -109,6 +120,16 @@
             // Hide modal and pause video
             modal.classList.add('hidden');
             videoPlayer.pause();
+        }
+
+        function rewindVideo() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.currentTime = Math.max(0, videoPlayer.currentTime - 5); // Rewind by 5 seconds, ensuring it doesn't go below 0
+        }
+
+        function forwardVideo() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.currentTime = Math.min(videoPlayer.duration, videoPlayer.currentTime + 5); // Forward by 5 seconds, ensuring it doesn't exceed the video's duration
         }
     </script>
 @endsection
